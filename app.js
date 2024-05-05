@@ -1,12 +1,13 @@
 import express from 'express';
-import router from './services/router.js'
+import router from './services/router.js';
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+// Add urlencoded: true
+app.use(express.json());
 
-app.use(router)
+app.use(router);
 app.get('/', (req, res) => res.send('<h1>MailService</h1>'));
 
-const port = process.env.PORT || 8080
-app.listen(port, () => console.log(`Mail Service started on port: ${port}`))
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`Mail Service started on port: ${port}`));
